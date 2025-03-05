@@ -2,19 +2,26 @@ import './App.css'
 import { useState } from 'react'
 
 function App() {
-  const [search, setSearch] = useState(false)
 
   const stringsSearch = ['hiring programador', 'hiring desarrollador', 'desarrollador', 'desarrollador junior', 'desarrollador frontend', 'frontend argentina', 'programador']
-  const handleSearch = () => {
-    alert('Busqueda realizada')
-  }
+
+  const [searchStates, setSearchStates] = useState(
+    stringsSearch.map(() => [false, false, false])
+  );
+
+  const handleSearch = (index, columnIndex) => {
+    const newSearchStates = [...searchStates];
+    newSearchStates[index][columnIndex] = !newSearchStates[index][columnIndex];
+    setSearchStates(newSearchStates);
+  };
+
 
   return (
     <>
       <h1 className='text-white text-center'>Mis busquedas de Linkedin</h1>
       <div className='p-3 m-0 border-0 bd-example m-0 border-0'>
 
-        <table class="table">
+        <table className="table">
           {/* COLUMNAS */}
           <thead>
             <tr>
@@ -29,9 +36,15 @@ function App() {
             {stringsSearch.map((item, index) => (
               <tr key={index}>
                 <th scope="row">{item}</th>
-                <td onClick={handleSearch}>Mark</td>
-                <td onClick={handleSearch}>Mark</td>
-                <td onClick={handleSearch}><i class="bi bi-x-lg text-dark bg-white"></i></td>
+                <td onClick={() => handleSearch(index, 0)}>
+                  {searchStates[index][0] ? <i className="bi bi-x-lg text-dark bg-white"></i> : null}
+                </td>
+                <td onClick={() => handleSearch(index, 1)}>{
+                  searchStates[index][1] ? <i className="bi bi-x-lg text-dark bg-white"></i> : null}
+                </td>
+                <td onClick={() => handleSearch(index, 2)}>
+                  {searchStates[index][2] ? <i className="bi bi-x-lg text-dark bg-white"></i> : null}
+                </td>
               </tr>
             ))}
           </tbody>
