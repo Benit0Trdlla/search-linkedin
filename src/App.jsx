@@ -21,7 +21,7 @@ function App() {
       <h1 className='text-white text-center'>Mis busquedas de Linkedin</h1>
       <div className='p-3 m-0 border-0 bd-example m-0 border-0'>
 
-        <table className="table">
+        <table className="table table-dark table-hover">
           {/* COLUMNAS */}
           <thead>
             <tr>
@@ -37,13 +37,13 @@ function App() {
               <tr key={index}>
                 <th scope="row">{item}</th>
                 <td onClick={() => handleSearch(index, 0)}>
-                  {searchStates[index][0] ? <i className="bi bi-x-lg text-dark bg-white"></i> : null}
+                  {searchStates[index][0] ? <i className="bi bi-x-lg bg-trasparent"></i> : null}
                 </td>
                 <td onClick={() => handleSearch(index, 1)}>{
-                  searchStates[index][1] ? <i className="bi bi-x-lg text-dark bg-white"></i> : null}
+                  searchStates[index][1] ? <i className="bi bi-x-lg bg-trasparent"></i> : null}
                 </td>
                 <td onClick={() => handleSearch(index, 2)}>
-                  {searchStates[index][2] ? <i className="bi bi-x-lg text-dark bg-white"></i> : null}
+                  {searchStates[index][2] ? <i className="bi bi-x-lg bg-trasparent"></i> : null}
                 </td>
               </tr>
             ))}
