@@ -3,7 +3,7 @@ import { useState } from 'react'
 
 function App() {
 
-  const stringsSearch = ['hiring programador', 'hiring desarrollador', 'desarrollador', 'desarrollador junior', 'desarrollador frontend', 'frontend argentina', 'programador']
+  const stringsSearch = ['Hiring Programador', 'Hiring Desarrollador', 'Desarrollador', 'Desarrollador Junior', 'Desarrollador Frontend', 'Frontend Argentina', 'Programador']
 
   const [searchStates, setSearchStates] = useState(
     stringsSearch.map(() => [false, false, false])
