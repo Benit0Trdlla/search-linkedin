@@ -48,7 +48,7 @@ function App() {
           </tbody>
         </table>
       </div>
-      <p className='text-white container fw-bold text-center' style={{ cursor: 'pointer' }} onClick={() => { navigator.clipboard.writeText('Desarrollador Frontend OR Buscamos desarrollador OR Desarrollador Argentina OR Oportunidad laboral Desarrollador') }}>"Desarrollador Frontend" OR "Buscamos desarrollador" OR "Desarrollador Argentina" OR "Oportunidad laboral Desarrollador"</p>
+      <p className='text-white container fw-bold text-center' style={{ cursor: 'pointer' }} onClick={() => { navigator.clipboard.writeText('"Desarrollador Frontend" OR "Buscamos desarrollador" OR "Desarrollador Argentina" OR "Oportunidad laboral Desarrollador"') }}>"Desarrollador Frontend" OR "Buscamos desarrollador" OR "Desarrollador Argentina" OR "Oportunidad laboral Desarrollador"</p>
     </>
   )
 }
