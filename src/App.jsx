@@ -1,10 +1,9 @@
 import './App.css'
 import { useState } from 'react'
 
+const stringsSearch = ['Hiring Programador', 'Hiring Desarrollador', 'Desarrollador', 'Desarrollador Junior', 'Desarrollador Frontend', 'Frontend Argentina', 'Programador']
+
 function App() {
-
-  const stringsSearch = ['Hiring Programador', 'Hiring Desarrollador', 'Desarrollador', 'Desarrollador Junior', 'Desarrollador Frontend', 'Frontend Argentina', 'Programador']
-
   const [searchStates, setSearchStates] = useState(
     stringsSearch.map(() => [false, false, false])
   );
@@ -18,9 +17,8 @@ function App() {
 
   return (
     <>
-      <h1 className='text-white text-center'>Mis busquedas de Linkedin</h1>
+      <h1 className='text-white text-center'>Mis búsquedas de LinkedIn</h1>
       <div className='p-3 m-0 border-0 bd-example m-0 border-0'>
-
         <table className="table table-dark table-hover">
           {/* COLUMNAS */}
           <thead>
