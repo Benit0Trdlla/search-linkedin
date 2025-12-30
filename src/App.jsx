@@ -1,3 +1,4 @@
+import { toast } from 'sonner';
 import './App.css'
 import { useState } from 'react'
 
@@ -13,6 +14,11 @@ function App() {
     newSearchStates[index][columnIndex] = !newSearchStates[index][columnIndex];
     setSearchStates(newSearchStates);
   };
+
+  const handleCopy = () => {
+    navigator.clipboard.writeText('"Desarrollador Frontend" OR "Buscamos desarrollador" OR "Desarrollador Argentina" OR "Oportunidad laboral Desarrollador"')
+    toast.success('Copiado al portapapeles')
+  }
 
 
   return (
@@ -48,7 +54,7 @@ function App() {
           </tbody>
         </table>
       </div>
-      <p className='text-white container fw-bold text-center' style={{ cursor: 'pointer' }} onClick={() => { navigator.clipboard.writeText('"Desarrollador Frontend" OR "Buscamos desarrollador" OR "Desarrollador Argentina" OR "Oportunidad laboral Desarrollador"') }}>"Desarrollador Frontend" OR "Buscamos desarrollador" OR "Desarrollador Argentina" OR "Oportunidad laboral Desarrollador"</p>
+      <p className='text-white container fw-bold text-center' style={{ cursor: 'pointer' }} onClick={handleCopy}>"Desarrollador Frontend" OR "Buscamos desarrollador" OR "Desarrollador Argentina" OR "Oportunidad laboral Desarrollador"</p>
     </>
   )
 }
